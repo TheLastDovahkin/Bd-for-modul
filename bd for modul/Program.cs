@@ -6,20 +6,20 @@ namespace bd_for_modul
     {
         public static async Task Main(string[] args)
         {
-            //await using (var context = new SampleContextFactory().CreateDbContext(args))
-            //{
-            //    await new Requests(context).FirstRequestAsync();
-            //}
+            await using (var context = new SampleContextFactory().CreateDbContext(args))
+            {
+                await new Requests(context).FirstRequestAsync();
+            }
 
-            //await using (var context = new SampleContextFactory().CreateDbContext(args))
-            //{
-            //    await new Requests(context).SecondRequestAsync();
-            //}
+            await using (var context = new SampleContextFactory().CreateDbContext(args))
+            {
+                await new Requests(context).SecondRequestAsync();
+            }
 
-            //await using (var context = new SampleContextFactory().CreateDbContext(args))
-            //{
-            //    await new Requests(context).ThirdRequestAsync();
-            //}
+            await using (var context = new SampleContextFactory().CreateDbContext(args))
+            {
+                await new Requests(context).ThirdRequestAsync();
+            }
         }
     }
 }
