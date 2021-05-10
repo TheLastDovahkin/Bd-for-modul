@@ -1,0 +1,5 @@
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=DESKTOP-7P91ERC\\SQLEXPRESS01;Database=BdForModule;Integrated Security=True"
+    }
+  }
