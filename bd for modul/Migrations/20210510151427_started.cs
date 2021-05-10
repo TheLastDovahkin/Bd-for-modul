@@ -93,11 +93,11 @@ namespace bd_for_modul.Migrations
                 table: "Supply",
                 column: "SongId");
 
-            migrationBuilder.Sql(@"INSERT INTO Artist(Name, DateOfBirth, Phone, Email, InstagramURL) VALUES('Some Samuel', '1999-12-11', '+65564866' 'BigWhiteAss', 'IDK@com'");
+            migrationBuilder.Sql(@"INSERT INTO Artist(Name, DateOfBirth, Phone, Email, InstagramURL) VALUES('Some Samuel', '1999-12-11', '+65564866', 'BigWhiteAss@gmail.com', 'IDK@com')");
 
-            migrationBuilder.Sql(@"INSERT INTO Genre(Title) VALUES (RealBlackSong)");
+            migrationBuilder.Sql(@"INSERT INTO Genre(Title) VALUES ('RealBlackSong')");
 
-            migrationBuilder.Sql(@"INSERT INTO Song(SongTitle, Duration, ReleasedData, SongGenre) VALUES('IAMNOTRASIC', CAST('00:00:11' as TIME), CAST('2021-05-10' as date),SELECT GenreId FROM Genre WHERE Title = 'RealBlackSong'");
+            migrationBuilder.Sql(@"INSERT INTO Song(SongTitle, Duration, ReleasedDate, SongGenre) VALUES('IAMNOTRASIC', CAST('00:00:11' as TIME), CAST('2021-05-10' as DATE), (SELECT GenreId FROM Genre WHERE Title = 'RealBlackSong'))");
 
             migrationBuilder.Sql(@"INSERT INTO Supply(ArtistId, SongId) VALUES((SELECT ArtistId FROM Artist WHERE Name = 'Some Samuel'), (SELECT SongId FROM Song WHERE SongTitle = 'IAMNOTRASIC'))");
         }
